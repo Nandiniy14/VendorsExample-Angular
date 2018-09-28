@@ -1,0 +1,52 @@
+
+
+  <html>
+        <head>
+        
+    
+        </head>
+        <body>
+         <!-- <div *ngIf = !submitted> -->
+           <div>
+                <form #f="ngForm">
+                        <div class="login-form">
+                     <h1 style="color: #ff4d33 ">Welcome</h1>
+                     <div class="form-group">
+                            <h4>Enter the percentage of tasks for each person</h4>
+                            <div *ngFor="let arr of Arr(NoOfVendors.TotalVendors);let i = index "> 
+                                <input type="number" placeholder = "Enter the percentage" id=i class="form-control" [(ngModel)]="Arr[i]" name="percentage" required>
+                                <br>
+                               
+                            </div>
+                            
+                        </div>
+                       
+                        <button class="btn btn-primary log-btn" type="button" (click)="onAdd(f)" [disabled]="!f.valid" >Submit</button>
+                    
+
+                
+                
+                   </div>
+                 </form>
+    
+         </div>
+            
+     <div *ngIf = submitted>
+       
+            <form>
+                    <div class="form-group login-form">
+                        <h4>Tasks are divided in the following way:</h4>
+                        <h4>Total Tasks: {{NoOfVendors.TotalTasks}}</h4>
+                        <h4>Total Vendors: {{NoOfVendors.TotalVendors}}</h4>
+                        <!-- <div *ngFor="let task of Tasks; let i=index">
+                          <h4>Vendor{{i+1}} is alloted with {{task}} tasks.</h4>
+                        </div> -->
+                        <div *ngFor="let model of dynamicmodel; let i=index">
+                            <h4> Vendor{{i+1}} can complete {{model.percentage_arr}}% of work and so, is alloted with {{model.tasks}} tasks.</h4>
+
+                        </div>
+                    </div>
+                </form>
+    
+      </div>
+    

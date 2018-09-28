@@ -1,0 +1,51 @@
+ <!-- <div *ngIf = !submitted class="container">
+      <div class="row">
+        <form  #f="ngForm">
+            <div class="form-group">
+                <label for="TotalTasks">Enter the total number of tasks</label>
+                <input type="number" id="tasks" class="form-control" ngModel name="tasks" required>
+            </div>
+            <div class="form-group">
+                <label for="vendors">Enter the total number of vendors</label>
+                <input type="number" id="vendors" class="form-control" ngModel name="vendors" required>
+            </div>
+            <button class="btn btn-primary" type="button" (click)="onSubmit(f)" [disabled]="!f.valid" >Submit</button>
+        </form>
+      </div>
+  </div>
+  <div *ngIf = submitted>
+      <app-vendor-list> </app-vendor-list>
+  
+    </div> -->
+    <html>
+    <head>
+
+
+    </head>
+    <body>
+     <div >
+            <form #f="ngForm">
+                    <div class="login-form">
+                 <h1 style="color: #ff4d33 ">Welcome</h1>
+                 <div class="form-group">
+                    <input type="number" id="tasks" class="form-control" ngModel name="tasks" required placeholder = "Enter the total number of tasks" title="Please enter a valid number">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="vendors" class="form-control" ngModel name="vendors" required placeholder="Enter the total number of vendors">
+                </div>
+                
+                <button class="btn btn-primary log-btn" routerLink="/vendor-list" type="button" (click)="onSubmit(f)" [disabled]="!f.valid" >Submit</button>
+            
+               
+               </div>
+             </form>
+
+     </div>
+        
+ <div *ngIf = submitted>
+    <!-- <app-vendor-list> </app-vendor-list> -->
+    <router-outlet></router-outlet>
+    
+  </div>
+    </body>
+</html>
